@@ -1,4 +1,6 @@
 Psyche::Application.routes.draw do
+  resources :examinations
+
   resources :patients
 
   # The priority is based upon order of creation:

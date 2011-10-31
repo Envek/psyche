@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Patient:</b>
+  <%= @examination.patient %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @examination.date %>
+</p>
+
+<p>
+  <b>Grade:</b>
+  <%= @examination.grade %>
+</p>
+
+<p>
+  <b>Education type:</b>
+  <%= @examination.education_type %>
+</p>
+
+<p>
+  <b>Education form:</b>
+  <%= @examination.education_form %>
+</p>
+
+<p>
+  <b>Education route:</b>
+  <%= @examination.education_route %>
+</p>
+
+<p>
+  <b>Initiator:</b>
+  <%= @examination.initiator %>
+</p>
+
+<p>
+  <b>Common iq:</b>
+  <%= @examination.common_iq %>
+</p>
+
+<p>
+  <b>Nonverbal iq:</b>
+  <%= @examination.nonverbal_iq %>
+</p>
+
+<p>
+  <b>Verbal iq:</b>
+  <%= @examination.verbal_iq %>
+</p>
+
+
+<%= link_to 'Edit', edit_examination_path(@examination) %> |
+<%= link_to 'Back', examinations_path %>

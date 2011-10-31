@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  patient: 
+  date: 2011-11-01
+  grade: 1
+  education_type: MyString
+  education_form: MyString
+  education_route: MyString
+  initiator: MyString
+  common_iq: 1
+  nonverbal_iq: 1
+  verbal_iq: 1
+
+two:
+  patient: 
+  date: 2011-11-01
+  grade: 1
+  education_type: MyString
+  education_form: MyString
+  education_route: MyString
+  initiator: MyString
+  common_iq: 1
+  nonverbal_iq: 1
+  verbal_iq: 1

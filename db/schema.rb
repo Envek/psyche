@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111031135642) do
+ActiveRecord::Schema.define(:version => 20111031142405) do
+
+  create_table "examinations", :force => true do |t|
+    t.integer  "patient_id"
+    t.date     "date"
+    t.integer  "grade"
+    t.string   "education_type"
+    t.string   "education_form"
+    t.string   "education_route"
+    t.string   "initiator"
+    t.integer  "common_iq"
+    t.integer  "nonverbal_iq"
+    t.integer  "verbal_iq"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "examinations", ["patient_id"], :name => "index_examinations_on_patient_id"
 
   create_table "patients", :force => true do |t|
     t.string   "surname"
