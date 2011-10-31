@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  surname: MyString
+  name: MyString
+  patronymic: MyString
+  date_of_birth: 2011-11-01
+  grade: 1
+  district: MyString
+  address: MyString
+  orphan: false
+  disabled: false
+  father: MyString
+  mother: MyString
+
+two:
+  surname: MyString
+  name: MyString
+  patronymic: MyString
+  date_of_birth: 2011-11-01
+  grade: 1
+  district: MyString
+  address: MyString
+  orphan: false
+  disabled: false
+  father: MyString
+  mother: MyString
