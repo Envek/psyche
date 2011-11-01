@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111101025347) do
+ActiveRecord::Schema.define(:version => 20111101062806) do
 
   create_table "diagnoses", :force => true do |t|
     t.string "code"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(:version => 20111101025347) do
   create_table "diagnoses_examinations", :force => true do |t|
     t.integer "diagnosis_id"
     t.integer "examination_id"
+  end
+
+  create_table "districts", :force => true do |t|
+    t.string "title"
   end
 
   create_table "examinations", :force => true do |t|
@@ -49,7 +53,6 @@ ActiveRecord::Schema.define(:version => 20111101025347) do
     t.string   "patronymic"
     t.date     "date_of_birth"
     t.integer  "grade"
-    t.string   "district"
     t.string   "address"
     t.boolean  "orphan"
     t.boolean  "disabled"
@@ -57,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20111101025347) do
     t.string   "mother"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "district_id"
   end
 
 end
