@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111031142405) do
+ActiveRecord::Schema.define(:version => 20111101025347) do
+
+  create_table "diagnoses", :force => true do |t|
+    t.string "code"
+    t.string "title"
+    t.string "description"
+  end
+
+  add_index "diagnoses", ["code"], :name => "index_diagnoses_on_code", :unique => true
+
+  create_table "diagnoses_examinations", :force => true do |t|
+    t.integer "diagnosis_id"
+    t.integer "examination_id"
+  end
 
   create_table "examinations", :force => true do |t|
     t.integer  "patient_id"
