@@ -1,0 +1,18 @@
+table
+  thead
+    tr
+      - %w(name date_of_birth grade district manage).each do |a|
+        th= t("activerecord.attributes.patient.%s" % a)
+  tbody
+    - @patients.each do |patient|
+      tr
+        td= patient.name
+        td= patient.date_of_birth
+        td= patient.grade
+        td= patient.district.title
+        td
+          | #{link_to t("actions.show"), patient} |
+            #{link_to t("actions.edit"), edit_patient_path(patient)} |
+            #{link_to t("actions.destroy"), patient, confirm: t(".destroy_confirm")%patient.name, method: :delete}
+
+.button = link_to t("actions.new"), new_patient_path

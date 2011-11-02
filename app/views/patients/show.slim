@@ -1,0 +1,33 @@
+h1 #{t(".header")}
+
+p#notice = notice
+
+dl
+  dt #{t("activerecord.attributes.patient.name")}
+  dd #{@patient.surname} #{@patient.name} #{@patient.patronymic}
+dl
+  dt #{t("activerecord.attributes.patient.date_of_birth")}
+  dd #{@patient.date_of_birth}
+dl
+  dt #{t("activerecord.attributes.patient.grade")}
+  dd #{@patient.grade}
+dl
+  dt #{t("activerecord.attributes.patient.district")}
+  dd #{@patient.district.title}
+dl
+  dt #{t("activerecord.attributes.patient.address")}
+  dd #{@patient.address}
+dl
+  dt #{t("activerecord.attributes.patient.father")}
+  dd #{@patient.father}
+dl
+  dt #{t("activerecord.attributes.patient.mother")}
+  dd #{@patient.mother}
+dl
+  dt #{t(".additional")}
+  dd #{t("activerecord.attributes.patient.orphan") if @patient.orphan}
+  dd #{t("activerecord.attributes.patient.disabled") if @patient.disabled}
+
+.actions
+  | #{link_to t("actions.edit"), edit_patient_path(@patient)} |
+    #{link_to t("actions.back"), patients_path}

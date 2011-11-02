@@ -1,0 +1,43 @@
+= form_for(@patient) do |f|
+  - if @patient.errors.any?
+    #error_explanation
+      h2 #{pluralize(@patient.errors.count, "error")} prohibited this patient from being saved:
+      ul
+        - @patient.errors.full_messages.each do |msg|
+          li = msg
+  dl
+    dt = f.label :surname
+    dd = f.text_field :surname
+  dl
+    dt = f.label :name
+    dd = f.text_field :name
+  dl
+    dt = f.label :patronymic
+    dd = f.text_field :patronymic
+  dl
+    dt = f.label :date_of_birth
+    dd 
+      input type="date" name="patient[date_of_birth]" value=@patient.date_of_birth
+  dl
+    dt = f.label :grade
+    dd = f.number_field :grade
+  dl
+    dt = f.label :district_id
+    dd = f.select :district_id, options_for_select(District.all.map{|d| [d.title, d.id]}, @patient.district_id)
+  dl
+    dt = f.label :address
+    dd = f.text_field :address
+  dl
+    dt = f.label :orphan
+    dd = f.check_box :orphan
+  dl
+    dt = f.label :disabled
+    dd = f.check_box :disabled
+  dl
+    dt = f.label :father
+    dd = f.text_field :father
+  dl
+    dt = f.label :mother
+    dd = f.text_field :mother
+  .actions
+    = f.submit

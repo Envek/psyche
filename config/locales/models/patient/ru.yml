@@ -1,0 +1,31 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        patient:
+          attributes:
+            name:
+              blank: "не может быть пустым."
+            district_id:
+              blank: "не может быть пустым."
+
+    models:
+      patient: 
+        one: "Пациент"
+        few: "Пациента"
+        many: "Пациентов"
+        other: "Пациентов"
+
+    attributes:
+      patient:
+        surname: "Фамилия"
+        name: "Имя"
+        patronymic: "Отчество"
+        date_of_birth: "Дата рождения"
+        grade: "Год обучения"
+        district: "Город/район"
+        address: "Адрес"
+        orphan: "Сирота"
+        disabled: "Инвалид"
+        father: "Отец"
+        mother: "Мать"
