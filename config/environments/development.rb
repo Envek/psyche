@@ -27,4 +27,7 @@ Psyche::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Output pretty (indented) format
+  Slim::Engine.set_default_options :pretty => true
 end
