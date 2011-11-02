@@ -10,6 +10,9 @@ gem 'sqlite3'
 # Slim markup language templates
 gem 'slim'
 
+# Full support for russian localization
+gem 'russian'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
