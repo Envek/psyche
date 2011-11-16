@@ -6,7 +6,7 @@ table
   tbody
     - @patients.each do |patient|
       tr
-        td= patient.name
+        td= patient.fullname
         td= patient.date_of_birth
         td= patient.grade
         td= patient.district.title
