@@ -31,3 +31,11 @@ dl
 .actions
   | #{link_to t("actions.edit"), edit_patient_path(@patient)} |
     #{link_to t("actions.back"), patients_path}
+
+h2 #{t(".examinations")}
+- if @patient.examinations.any?
+  ul.examinations
+  - @patient.examinations.each do |exam|
+    li #{link_to exam.date, exam}
+- else
+  p #{t(".no_examinations")} #{link_to t(".create_examination"), [:new, @patient, :examination]}?
