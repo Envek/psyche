@@ -12,4 +12,9 @@ class Patient < ActiveRecord::Base
   def shortname
     "#{surname} #{name[0]}. #{patronymic[0]}."
   end
+
+  def examination
+    examinations.first
+  end
+
 end

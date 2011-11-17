@@ -1,36 +1,68 @@
-h1 #{t(".header")}
+h1 #{t(".header", :patient => @patient.fullname)}
+
+ul.actions
+  li #{link_to t(".patients_list"), patients_path}
+  li #{link_to t("actions.edit"), edit_patient_path(@patient)}
+  li #{link_to t(".new_examination"), [:new, @patient, :examination]}
 
 p#notice = notice
 
-dl
-  dt #{t("activerecord.attributes.patient.name")}
-  dd #{@patient.surname} #{@patient.name} #{@patient.patronymic}
-dl
-  dt #{t("activerecord.attributes.patient.date_of_birth")}
-  dd #{@patient.date_of_birth}
-dl
-  dt #{t("activerecord.attributes.patient.grade")}
-  dd #{@patient.grade}
-dl
-  dt #{t("activerecord.attributes.patient.district")}
-  dd #{@patient.district.title}
-dl
-  dt #{t("activerecord.attributes.patient.address")}
-  dd #{@patient.address}
-dl
-  dt #{t("activerecord.attributes.patient.father")}
-  dd #{@patient.father}
-dl
-  dt #{t("activerecord.attributes.patient.mother")}
-  dd #{@patient.mother}
-dl
-  dt #{t(".additional")}
-  dd #{t("activerecord.attributes.patient.orphan") if @patient.orphan}
-  dd #{t("activerecord.attributes.patient.disabled") if @patient.disabled}
+.patient_info
+  h2 #{t(".patient_info")}
 
-.actions
-  | #{link_to t("actions.edit"), edit_patient_path(@patient)} |
-    #{link_to t("actions.back"), patients_path}
+  dl
+    dt #{t("activerecord.attributes.patient.name")}
+    dd #{@patient.surname} #{@patient.name} #{@patient.patronymic}
+  dl
+    dt #{t("activerecord.attributes.patient.date_of_birth")}
+    dd #{@patient.date_of_birth}
+  dl
+    dt #{t("activerecord.attributes.patient.grade")}
+    dd #{@patient.grade}
+  dl
+    dt #{t("activerecord.attributes.patient.district")}
+    dd #{@patient.district.title}
+  dl
+    dt #{t("activerecord.attributes.patient.address")}
+    dd #{@patient.address}
+  dl
+    dt #{t("activerecord.attributes.patient.father")}
+    dd #{@patient.father}
+  dl
+    dt #{t("activerecord.attributes.patient.mother")}
+    dd #{@patient.mother}
+  dl
+    dt #{t(".additional")}
+    dd #{t("activerecord.attributes.patient.orphan") if @patient.orphan}
+    dd #{t("activerecord.attributes.patient.disabled") if @patient.disabled}
+
+- if @patient.examinations.any?
+  - examination = @patient.examination
+  .last_examination_info
+    h2 #{t(".last_examination_info")}
+
+    dl
+      dt #{t("activerecord.attributes.examination.education_type")}
+      dd #{examination.education_type}
+    dl
+      dt #{t("activerecord.attributes.examination.education_form")}
+      dd #{examination.education_form}
+    dl
+      dt #{t("activerecord.attributes.examination.education_route")}
+      dd #{examination.education_route}
+    dl
+      dt #{t("activerecord.attributes.examination.initiator")}
+      dd #{examination.initiator}
+    dl
+      dt #{t("activerecord.attributes.examination.common_iq")}
+      dd #{examination.common_iq}
+    dl
+      dt #{t("activerecord.attributes.examination.nonverbal_iq")}
+      dd #{examination.nonverbal_iq}
+    dl
+      dt #{t("activerecord.attributes.examination.verbal_iq")}
+      dd #{examination.verbal_iq}
+
 
 h2 #{t(".examinations")}
 - if @patient.examinations.any?
