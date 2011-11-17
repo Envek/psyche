@@ -1,0 +1,40 @@
+h1 #{t(".header", :patient => @examination.patient.fullname, :date => @examination.date)}
+
+p#notice = notice
+
+dl
+  dt #{t("activerecord.attributes.examination.patient")}
+  dd #{@examination.patient.fullname} #{@examination.patient.date_of_birth}
+dl
+  dt #{t("activerecord.attributes.examination.date")}
+  dd #{@examination.date}
+dl
+  dt #{t("activerecord.attributes.examination.grade")}
+  dd #{@examination.grade}
+dl
+  dt #{t("activerecord.attributes.examination.education_type")}
+  dd #{@examination.education_type}
+dl
+  dt #{t("activerecord.attributes.examination.education_form")}
+  dd #{@examination.education_form}
+dl
+  dt #{t("activerecord.attributes.examination.education_route")}
+  dd #{@examination.education_route}
+dl
+  dt #{t("activerecord.attributes.examination.initiator")}
+  dd #{@examination.initiator}
+dl
+  dt #{t("activerecord.attributes.examination.common_iq")}
+  dd #{@examination.common_iq}
+dl
+  dt #{t("activerecord.attributes.examination.nonverbal_iq")}
+  dd #{@examination.nonverbal_iq}
+dl
+  dt #{t("activerecord.attributes.examination.verbal_iq")}
+  dd #{@examination.verbal_iq}
+
+.actions
+  | #{link_to t("actions.edit"), edit_examination_path(@examination)} |
+    #{link_to t('.patient'), @examination.patient} | 
+    #{link_to t('.patient_exams'), [@examination.patient, :examinations]} | 
+    #{link_to t('.all_examinations'), examinations_path}

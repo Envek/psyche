@@ -1,0 +1,8 @@
+h1 = t(".header")
+
+== render 'form'
+
+| #{link_to t('.patient'), @examination.patient} |
+  #{link_to t('.patient_exams'), [@examination.patient, :examinations]} |
+  #{link_to t('.all_examinations'), examinations_path} |
+  #{link_to t('actions.back'), @examination}

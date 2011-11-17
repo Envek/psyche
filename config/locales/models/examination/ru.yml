@@ -1,0 +1,30 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        examination:
+          attributes:
+            patient_id:
+              blank: "должен быть задан."
+            date:
+              blank: "не может быть пустой."
+
+    models:
+      examination: 
+        one: "Обследование"
+        few: "Обследования"
+        many: "Обследований"
+        other: "Обследования"
+
+    attributes:
+      examination:
+        patient: "Пациент"
+        date: "Дата проведения"
+        grade: "Год обучения"
+        education_type: "Вид обучения"
+        education_form: "Форма обучения"
+        education_route: "Образовательный маршрут"
+        initiator: "Инициатор"
+        common_iq: "Общий ИП"
+        nonverbal_iq: "Невербальный ИП"
+        verbal_iq: "Вербальный ИП"

@@ -1,0 +1,40 @@
+= form_for([@patient,@examination]) do |f|
+  - if @examination.errors.any?
+    #error_explanation
+      h2 #{pluralize(@examination.errors.count, "error")} prohibited this examination from being saved:
+      ul
+        - @examination.errors.full_messages.each do |msg|
+          li = msg
+  dl
+    dt = f.label :patient_id
+    dd = f.select :patient_id, options_for_select( Patient.all.map{|p| [p.fullname, p.id] }, (params[:patient_id] or @examination.patient.try(:id)))
+  dl
+    dt = f.label :date
+    dd 
+      input type="date" name="examination[date]" value=(@examination.date or params[:date] or Date.today)
+  dl
+    dt = f.label :grade
+    dd = f.number_field :grade
+  dl
+    dt = f.label :education_type
+    dd = f.text_field :education_type
+  dl
+    dt = f.label :education_form
+    dd = f.text_field :education_form
+  dl
+    dt = f.label :education_route
+    dd = f.text_field :education_route
+  dl
+    dt = f.label :initiator
+    dd = f.text_field :initiator
+  dl
+    dt = f.label :common_iq
+    dd = f.number_field :common_iq
+  dl
+    dt = f.label :nonverbal_iq
+    dd = f.number_field :nonverbal_iq
+  dl
+    dt = f.label :verbal_iq
+    dd = f.number_field :verbal_iq
+  .actions
+    = f.submit

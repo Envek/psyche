@@ -1,0 +1,16 @@
+ru:
+  examinations:
+    new:
+      header: "Создание записи обследования"
+    edit:
+      header: "Редактирование записи обследования"
+      patient: "Пациент"
+      patient_exams: "Обследования пациента"
+      all_examinations: "Все обследования"
+    show:
+      header: "Обследование от %{date} пациента %{patient}"
+      patient: "Пациент"
+      patient_exams: "Обследования пациента"
+      all_examinations: "Все обследования"
+    index:
+      destroy_confirm: "Вы действительно уверены, что хотите удалить информацию об этом обследовании из базы данных?"
