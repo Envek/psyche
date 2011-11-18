@@ -1,0 +1,7 @@
+- title t("mainmenu.dashboard")
+
+menu.actions.dashboard
+  li= link_to t(".new_examination"), new_examination_path
+
+.dashboard_today #{I18n.l(Date.today, :format => :long)}
+
