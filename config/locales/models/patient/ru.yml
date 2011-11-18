@@ -29,3 +29,5 @@ ru:
         disabled: "Инвалид"
         father: "Отец"
         mother: "Мать"
+
+        shortinfo: "%{name} %{birth} г.р. (%{district})"
