@@ -1,0 +1,19 @@
+= form_for([@patient,@schedule]) do |f|
+  - if @schedule.errors.any?
+    #error_explanation
+      h2 #{pluralize(@schedule.errors.count, "error")} prohibited this schedule from being saved:
+      ul
+        - @schedule.errors.full_messages.each do |msg|
+          li = msg
+  dl
+    dt = f.label :patient_id
+    dd = f.select :patient_id, options_for_select( Patient.all.map{|p| [p.fullname, p.id] }, (params[:patient_id] or @schedule.patient.try(:id)))
+  dl
+    dt = f.label :date
+    dd 
+      input type="date" name="schedule[date]" value=(@schedule.date or params[:date] or Date.today)
+  dl
+    dt = f.label :notes
+    dd = f.text_field :notes
+  .actions
+    = f.submit

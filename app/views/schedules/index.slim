@@ -1,0 +1,19 @@
+- title t("mainmenu.schedules")
+
+menu.actions
+  li #{link_to t("actions.new"), new_schedule_path(@patient)}
+
+table
+  thead
+    tr
+      - %w(patient date notes manage).each do |a|
+        th= t("activerecord.attributes.schedule.%s" % a)
+  tbody
+    - @schedules.each do |schedule|
+      tr
+        td= link_to schedule.patient.fullname, schedule
+        td= schedule.date
+        td= schedule.notes
+        td
+          | #{link_to t("actions.edit"), edit_schedule_path(schedule)} |
+            #{link_to t("actions.destroy"), schedule, confirm: t(".destroy_confirm"), method: :delete}

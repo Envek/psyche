@@ -3,7 +3,10 @@ Psyche::Application.routes.draw do
 
   resources :patients do
     resources :examinations
+    resources :schedules
   end
+
+  resources :schedules
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

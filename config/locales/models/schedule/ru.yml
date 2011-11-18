@@ -1,0 +1,23 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        schedule:
+          attributes:
+            patient_id:
+              blank: "должен быть указан."
+            date:
+              blank: "не может быть пустой."
+
+    models:
+      schedule: 
+        one: "Запись"
+        few: "Записи"
+        many: "Записей"
+        other: "Записи"
+
+    attributes:
+      schedule:
+        patient: "Пациент"
+        date: "Назначенная дата"
+        notes: "Примечания"

@@ -1,0 +1,17 @@
+- title t(".header", :patient => @schedule.patient.fullname)
+
+menu.actions
+  li #{link_to t("actions.edit"), edit_schedule_path(@patient)}
+  li #{link_to t(".new_examination"), [:new, @schedule.patient, :examination]}
+
+p#notice = notice
+
+dl
+  dt #{t("activerecord.attributes.schedule.patient")}
+  dd #{link_to @schedule.patient.fullname, @schedule.patient}
+dl
+  dt #{t("activerecord.attributes.schedule.date")}
+  dd #{l(@schedule.date, :format => :long)}
+dl
+  dt #{t("activerecord.attributes.schedule.notes")}
+  dd #{@schedule.notes}

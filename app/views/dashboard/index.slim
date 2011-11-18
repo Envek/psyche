@@ -2,6 +2,20 @@
 
 menu.actions.dashboard
   li= link_to t(".new_examination"), new_examination_path
+  li= link_to t(".new_schedule"), new_schedule_path
 
 .dashboard_today #{I18n.l(Date.today, :format => :long)}
+
+.dashboard_today_schedule
+  h1 #{t(".today_schedule")}
+  - if Schedule.today.any?
+    - Schedule.today.each do |s|
+      - if s.examinated? 
+        li
+          span.examinated #{s.patient.shortinfo}.
+          |  #{link_to t(".examinated"), s.patient.examination}
+      - else
+        li #{s.patient.shortinfo} #{link_to t(".new_examination"), [:new, s.patient, :examination]}
+  - else
+    p #{t(".no_schedule")}
 

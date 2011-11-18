@@ -2,3 +2,6 @@ ru:
   dashboard:
     index:
       new_examination: "Новое обследование"
+      new_schedule: "Новая запись"
+      today_schedule: "Запись на сегодня"
+      examinated: "Обследован"

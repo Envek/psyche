@@ -18,6 +18,7 @@ ru:
     dashboard: "Главная"
     patients: "Пациенты"
     examinations: "Обследования"
+    schedules: "Запись"
   actions:
     new: "Создать новую запись"
     show: "Просмотреть"
