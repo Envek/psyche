@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title #{yield(:title)} — #{t("application.shortname")}
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  body
+    #layout
+      == render "header"
+      == render "mainmenu"
+      section#content
+        = yield
+      == render "footer"

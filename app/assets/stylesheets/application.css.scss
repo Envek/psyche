@@ -1,0 +1,136 @@
+// Common rules
+
+body {
+  margin: 0;
+  padding: 0 25px;
+  border: none;
+  background: white;
+  color: black;
+  font: normal 15px 'Arial',sans-serif;
+}
+
+h1:first-child {
+  margin-top: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid silver;
+
+  tr {
+    background: white;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  tr:nth-child(even) {
+    background: #F0F0F0;
+    background: rgba(200, 200, 200, 0.3);
+  }
+
+  td, th {
+    border: 1px solid silver;
+    padding: 0.15em 0.5em;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: navy;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:hover, a:focus {
+  color: blue;
+}
+
+a:active {
+  color: red;
+}
+
+dl {
+  overflow: hidden;
+
+  dt {
+    float: left;
+    width: 150px;
+  }
+
+  dd {
+    margin: 0 0 0 150px;
+  }
+}
+
+// Forms
+@import "forms";
+
+// Layout
+
+header {
+  background: rgb(240, 240, 240);
+  overflow: hidden;
+  margin:  0 -25px 10px;
+  padding: 0  25px;
+
+  h1, h1:first-child {
+    float: left;
+    margin: 2px 0;
+  }
+
+  h2 {
+    clear: left;
+    margin: 10px 0 5px 0;
+    font-size: 110%;
+  }
+}
+
+menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  li {
+    display: block;
+    float: left;
+    margin: 0 1em 0 0;
+    padding: 0;
+
+    a {
+      display: block;
+      padding: 5px 10px;
+      border: 1px solid silver;
+      background: rgb(224, 224, 224);
+      text-decoration: none;
+    }
+
+    a:link, a:visited {
+      color: maroon;
+      background: rgb(232, 232, 232);
+      font-weight: bold;
+    }
+
+    a:link:hover, a:visited:hover {
+      background: white;
+      color: red;
+    }
+  }
+}
+
+#mainmenu {
+  position: absolute;
+  top: 5px;
+  left: 200px;
+}
+
+.actions {
+  margin: 0 0 15px;
+}
+
+// Specific stylesheets for controllers
+@import "patients";

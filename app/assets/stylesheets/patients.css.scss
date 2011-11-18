@@ -1,3 +1,17 @@
-// Place all the styles related to the Patients controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.patient_info {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+}
+
+.patient_last_examination_info {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  margin-left: 50%;
+}
+
+.patient_examinations {
+  clear: both;
+}

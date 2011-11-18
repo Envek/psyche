@@ -1,0 +1,38 @@
+form {
+
+  dl {
+    overflow: hidden;
+  }
+
+  dl, .form_block {
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px dotted gray;
+  }
+
+  dl:last-child, .form_block:last-child {
+    border: none;
+  }
+
+  dt {
+    float: left;
+    width: 140px;
+    border-right: 1px dotted gray;
+    margin-right: -1px;
+  }
+
+  dt:after {
+    content: ":";
+  }
+
+  dd {
+    margin-left: 140px;
+    padding-left: 10px;
+    border-left: 1px dotted gray;
+  }
+
+  dd input, dd select {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+}

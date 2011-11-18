@@ -1,4 +1,9 @@
-h1 #{t(".header", :patient => @examination.patient.fullname, :date => @examination.date)}
+- title t(".header", :patient => @examination.patient.fullname, :date => @examination.date)
+
+menu.actions
+  li #{link_to t("actions.edit"), edit_examination_path(@examination)}
+  li #{link_to t('.patient'), @examination.patient}
+  li #{link_to t('.patient_exams'), [@examination.patient, :examinations]}
 
 p#notice = notice
 
@@ -32,9 +37,3 @@ dl
 dl
   dt #{t("activerecord.attributes.examination.verbal_iq")}
   dd #{@examination.verbal_iq}
-
-.actions
-  | #{link_to t("actions.edit"), edit_examination_path(@examination)} |
-    #{link_to t('.patient'), @examination.patient} | 
-    #{link_to t('.patient_exams'), [@examination.patient, :examinations]} | 
-    #{link_to t('.all_examinations'), examinations_path}

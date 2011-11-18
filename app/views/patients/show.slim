@@ -1,14 +1,13 @@
-h1 #{t(".header", :patient => @patient.fullname)}
+- title t(".header", :patient => @patient.fullname)
 
-ul.actions
-  li #{link_to t(".patients_list"), patients_path}
+menu.actions
   li #{link_to t("actions.edit"), edit_patient_path(@patient)}
   li #{link_to t(".new_examination"), [:new, @patient, :examination]}
 
 p#notice = notice
 
 .patient_info
-  h2 #{t(".patient_info")}
+  h1 #{t(".patient_info")}
 
   dl
     dt #{t("activerecord.attributes.patient.name")}
@@ -38,8 +37,8 @@ p#notice = notice
 
 - if @patient.examinations.any?
   - examination = @patient.examination
-  .last_examination_info
-    h2 #{t(".last_examination_info")}
+  .patient_last_examination_info
+    h1 #{t(".last_examination_info")}
 
     dl
       dt #{t("activerecord.attributes.examination.education_type")}
@@ -63,11 +62,11 @@ p#notice = notice
       dt #{t("activerecord.attributes.examination.verbal_iq")}
       dd #{examination.verbal_iq}
 
-
-h2 #{t(".examinations")}
-- if @patient.examinations.any?
-  ul.examinations
-  - @patient.examinations.each do |exam|
-    li #{link_to exam.date, exam}
-- else
-  p #{t(".no_examinations")} #{link_to t(".create_examination"), [:new, @patient, :examination]}?
+.patient_examinations
+  h1 #{t(".examinations")}
+  - if @patient.examinations.any?
+    ul
+    - @patient.examinations.each do |exam|
+      li #{link_to exam.date, exam}
+  - else
+    p #{t(".no_examinations")} #{link_to t(".create_examination"), [:new, @patient, :examination]}?

@@ -1,17 +1,19 @@
+- title t("mainmenu.examinations")
+
+menu.actions
+  li #{link_to t("actions.new"), new_examination_path}
+
 table
   thead
     tr
-      - %w(name date grade).each do |a|
+      - %w(name date grade manage).each do |a|
         th= t("activerecord.attributes.examination.%s" % a)
   tbody
     - @examinations.each do |examination|
       tr
-        td= examination.patient.fullname
+        td= link_to examination.patient.fullname, examination
         td= examination.date
         td= examination.grade
         td
-          | #{link_to t("actions.show"), examination} |
-            #{link_to t("actions.edit"), edit_examination_path(examination)} |
+          | #{link_to t("actions.edit"), edit_examination_path(examination)} |
             #{link_to t("actions.destroy"), examination, confirm: t(".destroy_confirm"), method: :delete}
-
-.button = link_to t("actions.new"), new_examination_path

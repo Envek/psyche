@@ -1,3 +1,8 @@
+- title t("mainmenu.patients")
+
+menu.actions
+  li #{link_to t("actions.new"), new_patient_path(@patient)}
+
 table
   thead
     tr
@@ -6,13 +11,10 @@ table
   tbody
     - @patients.each do |patient|
       tr
-        td= patient.fullname
+        td= link_to patient.fullname, patient
         td= patient.date_of_birth
         td= patient.grade
         td= patient.district.title
         td
-          | #{link_to t("actions.show"), patient} |
-            #{link_to t("actions.edit"), edit_patient_path(patient)} |
+          | #{link_to t("actions.edit"), edit_patient_path(patient)} |
             #{link_to t("actions.destroy"), patient, confirm: t(".destroy_confirm")%patient.name, method: :delete}
-
-.button = link_to t("actions.new"), new_patient_path
